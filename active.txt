@@ -1,0 +1,17 @@
+analysis-core:latest:not-pinned
+cmakebuilder:latest:not-pinned
+cobertura:latest:not-pinned
+cppcheck:latest:not-pinned
+gerrit-trigger:latest:not-pinned
+github:latest:not-pinned
+github-api:latest:not-pinned
+git:latest:not-pinned
+git-client:latest:not-pinned
+github:latest:not-pinned
+metrics:latest:not-pinned
+scm-api:latest:not-pinned
+ssh-agent:latest:not-pinned
+support-core:latest:not-pinned
+valgrind:latest:not-pinned
+warnings:latest:not-pinned
+xunit:latest:not-pinned
