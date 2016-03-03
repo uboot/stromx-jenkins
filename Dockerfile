@@ -10,3 +10,4 @@ RUN apt-get update \
 
 COPY stromx-opencv.xml /var/jenkins_home/jobs/stromx-opencv/config.xml
 COPY stromx.xml /var/jenkins_home/jobs/stromx/config.xml
+COPY config.xml /var/jenkins_home/

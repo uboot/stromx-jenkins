@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <clouds>
+    <hudson.plugins.ec2.EC2Cloud plugin="ec2@1.31">
+      <name>ec2-Amazon</name>
+      <useInstanceProfileForCredentials>false</useInstanceProfileForCredentials>
+      <accessId></accessId>
+      <secretKey></secretKey>
+      <privateKey>
+        <privateKey></privateKey>
+      </privateKey>
+      <instanceCap>2147483647</instanceCap>
+      <templates>
+        <hudson.plugins.ec2.SlaveTemplate>
+          <ami>ami-e7e6fc8b</ami>
+          <description>Ubuntu 14.04</description>
+          <zone></zone>
+          <securityGroups>jenkins-slave</securityGroups>
+          <remoteFS>/home/ubuntu/jenkins</remoteFS>
+          <type>T2Small</type>
+          <ebsOptimized>false</ebsOptimized>
+          <labels>unit</labels>
+          <mode>NORMAL</mode>
+          <initScript>sudo add-apt-repository -y ppa:stromx-developers/packages
+sudo apt-get update
+sudo apt-get install -y default-jre git cmake libboost-all-dev doxygen python-dev libzip-dev libxerces-c-dev libopencv-dev libcppunit-dev gcovr cppcheck valgrind libstromx-dev</initScript>
+          <tmpDir></tmpDir>
+          <userData></userData>
+          <numExecutors>1</numExecutors>
+          <remoteAdmin>ubuntu</remoteAdmin>
+          <jvmopts></jvmopts>
+          <subnetId></subnetId>
+          <idleTerminationMinutes>-5</idleTerminationMinutes>
+          <iamInstanceProfile></iamInstanceProfile>
+          <useEphemeralDevices>false</useEphemeralDevices>
+          <customDeviceMapping></customDeviceMapping>
+          <instanceCap>2147483647</instanceCap>
+          <stopOnTerminate>false</stopOnTerminate>
+          <usePrivateDnsName>false</usePrivateDnsName>
+          <associatePublicIp>false</associatePublicIp>
+          <useDedicatedTenancy>false</useDedicatedTenancy>
+          <amiType class="hudson.plugins.ec2.UnixData">
+            <rootCommandPrefix>sudo</rootCommandPrefix>
+            <sshPort>22</sshPort>
+          </amiType>
+          <launchTimeout>2147483647</launchTimeout>
+          <connectBySSHProcess>false</connectBySSHProcess>
+          <connectUsingPublicIp>false</connectUsingPublicIp>
+        </hudson.plugins.ec2.SlaveTemplate>
+      </templates>
+      <region>eu-central-1</region>
+    </hudson.plugins.ec2.EC2Cloud>
+  </clouds>
+</hudson>
