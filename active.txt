@@ -13,9 +13,12 @@ git-client:latest:not-pinned
 github:latest:not-pinned
 metrics:latest:not-pinned
 node-iterator-api:latest:not-pinned
+plain-credentials:latest:not-pinned
 scm-api:latest:not-pinned
 ssh-agent:latest:not-pinned
 support-core:latest:not-pinned
+token-macro:latest:not-pinned
 valgrind:latest:not-pinned
 warnings:latest:not-pinned
+workflow-step-api:latest:not-pinned
 xunit:latest:not-pinned
