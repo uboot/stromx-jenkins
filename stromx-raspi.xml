@@ -8,7 +8,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/uboot/stromx-opencv.git</url>
+        <url>https://github.com/uboot/stromx-raspi.git</url>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -20,7 +20,7 @@
     <submoduleCfg class="list"/>
     <extensions/>
   </scm>
-  <assignedNode>unit</assignedNode>
+  <assignedNode>raspi</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -32,9 +32,6 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Shell>
-      <command>cppcheck --xml-version=2 -ibuild-debug -ibuild-release -ibuild-coverage . 2&gt; cppcheck_results.xml</command>
-    </hudson.tasks.Shell>
     <hudson.plugins.cmake.CmakeBuilder plugin="cmakebuilder@2.4.1">
       <installationName>InSearchPath</installationName>
       <workingDir>build-release</workingDir>
@@ -71,26 +68,6 @@ find . -type f -name &apos;*.gcda&apos; -print | xargs /bin/rm -f
 make test
 gcovr --xml -v --exclude=.*/test/.*\.cpp -r.. -o coverage_results.xml .</command>
     </hudson.tasks.Shell>
-    <org.jenkinsci.plugins.valgrind.ValgrindBuilder plugin="valgrind@0.25">
-      <valgrindExecutable></valgrindExecutable>
-      <workingDirectory>build-release</workingDirectory>
-      <includePattern>**/test/moduletest</includePattern>
-      <excludePattern></excludePattern>
-      <outputDirectory>build-release</outputDirectory>
-      <outputFileEnding>.result</outputFileEnding>
-      <showReachable>false</showReachable>
-      <undefinedValueErrors>false</undefinedValueErrors>
-      <leakCheckLevel>full</leakCheckLevel>
-      <programOptions></programOptions>
-      <valgrindOptions></valgrindOptions>
-      <trackOrigins>false</trackOrigins>
-      <ignoreExitCode>false</ignoreExitCode>
-      <traceChildren>false</traceChildren>
-      <childSilentAfterFork>false</childSilentAfterFork>
-      <generateSuppressions>false</generateSuppressions>
-      <suppressionFiles></suppressionFiles>
-      <removeOldReports>false</removeOldReports>
-    </org.jenkinsci.plugins.valgrind.ValgrindBuilder>
   </builders>
   <publishers>
     <hudson.plugins.warnings.WarningsPublisher plugin="warnings@4.52">
@@ -134,56 +111,6 @@ gcovr --xml -v --exclude=.*/test/.*\.cpp -r.. -o coverage_results.xml .</command
         </hudson.plugins.warnings.ConsoleParser>
       </consoleParsers>
     </hudson.plugins.warnings.WarningsPublisher>
-    <org.jenkinsci.plugins.cppcheck.CppcheckPublisher plugin="cppcheck@1.21">
-      <cppcheckConfig>
-        <pattern>cppcheck_results.xml</pattern>
-        <ignoreBlankFiles>false</ignoreBlankFiles>
-        <allowNoReport>false</allowNoReport>
-        <configSeverityEvaluation>
-          <threshold></threshold>
-          <newThreshold></newThreshold>
-          <failureThreshold></failureThreshold>
-          <newFailureThreshold></newFailureThreshold>
-          <healthy></healthy>
-          <unHealthy></unHealthy>
-          <severityError>true</severityError>
-          <severityWarning>true</severityWarning>
-          <severityStyle>true</severityStyle>
-          <severityPerformance>true</severityPerformance>
-          <severityInformation>true</severityInformation>
-          <severityNoCategory>true</severityNoCategory>
-          <severityPortability>true</severityPortability>
-        </configSeverityEvaluation>
-        <configGraph>
-          <xSize>500</xSize>
-          <ySize>200</ySize>
-          <numBuildsInGraph>0</numBuildsInGraph>
-          <displayAllErrors>true</displayAllErrors>
-          <displayErrorSeverity>false</displayErrorSeverity>
-          <displayWarningSeverity>false</displayWarningSeverity>
-          <displayStyleSeverity>false</displayStyleSeverity>
-          <displayPerformanceSeverity>false</displayPerformanceSeverity>
-          <displayInformationSeverity>false</displayInformationSeverity>
-          <displayNoCategorySeverity>false</displayNoCategorySeverity>
-          <displayPortabilitySeverity>false</displayPortabilitySeverity>
-        </configGraph>
-      </cppcheckConfig>
-    </org.jenkinsci.plugins.cppcheck.CppcheckPublisher>
-    <org.jenkinsci.plugins.valgrind.ValgrindPublisher plugin="valgrind@0.25">
-      <valgrindPublisherConfig>
-        <pattern>build-release/*.result</pattern>
-        <failThresholdInvalidReadWrite></failThresholdInvalidReadWrite>
-        <failThresholdDefinitelyLost></failThresholdDefinitelyLost>
-        <failThresholdTotal></failThresholdTotal>
-        <unstableThresholdInvalidReadWrite></unstableThresholdInvalidReadWrite>
-        <unstableThresholdDefinitelyLost></unstableThresholdDefinitelyLost>
-        <unstableThresholdTotal></unstableThresholdTotal>
-        <publishResultsForAbortedBuilds>false</publishResultsForAbortedBuilds>
-        <publishResultsForFailedBuilds>false</publishResultsForFailedBuilds>
-        <failBuildOnMissingReports>false</failBuildOnMissingReports>
-        <failBuildOnInvalidReports>false</failBuildOnInvalidReports>
-      </valgrindPublisherConfig>
-    </org.jenkinsci.plugins.valgrind.ValgrindPublisher>
     <xunit plugin="xunit@1.101">
       <types>
         <CppUnitJunitHudsonTestType>

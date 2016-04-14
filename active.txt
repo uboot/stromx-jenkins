@@ -10,6 +10,7 @@ git:latest:not-pinned
 git-client:latest:not-pinned
 github:latest:not-pinned
 github-api:latest:not-pinned
+googleanalytics:latest:not-pinned
 icon-shim:latest:not-pinned
 jackson2-api:latest:not-pinned
 ldap:latest:not-pinned
