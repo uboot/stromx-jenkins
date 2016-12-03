@@ -22,3 +22,5 @@ token-macro:latest:not-pinned
 valgrind:latest:not-pinned
 warnings:latest:not-pinned
 xunit:latest:not-pinned
+embeddable-build-status:latest:not-pinned
+
