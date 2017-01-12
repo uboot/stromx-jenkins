@@ -7,7 +7,7 @@
   <numExecutors>0</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
+  <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured">
     <denyAnonymousReadAccess>false</denyAnonymousReadAccess>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
