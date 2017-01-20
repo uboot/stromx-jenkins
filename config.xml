@@ -23,11 +23,10 @@
   <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
   <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
   <clouds>
-    <hudson.plugins.ec2.EC2Cloud plugin="ec2@1.31">
+    <hudson.plugins.ec2.EC2Cloud plugin="ec2@1.36">
       <name>ec2-Amazon</name>
       <useInstanceProfileForCredentials>false</useInstanceProfileForCredentials>
-      <accessId></accessId>
-      <secretKey></secretKey>
+      <credentialsId></credentialsId>
       <privateKey>
         <privateKey>
         </privateKey>
