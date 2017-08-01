@@ -44,6 +44,7 @@ momentjs:latest:not-pinned
 node-iterator-api:latest:not-pinned
 pam-auth:latest:not-pinned
 pipeline-build-step:latest:not-pinned
+pipeline-github-lib:latest:not-pinned
 pipeline-graph-analysis:latest:not-pinned
 pipeline-input-step:latest:not-pinned
 pipeline-milestone-step:latest:not-pinned
