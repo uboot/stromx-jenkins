@@ -3,7 +3,7 @@
   <disabledAdministrativeMonitors>
     <string>hudson.diagnosis.ReverseProxySetupMonitor</string>
   </disabledAdministrativeMonitors>
-  <version>2.19.3</version>
+  <version>2.32.2</version>
   <numExecutors>0</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
@@ -34,8 +34,8 @@
       <instanceCap>1</instanceCap>
       <templates>
         <hudson.plugins.ec2.SlaveTemplate>
-          <ami>ami-e7e6fc8b</ami>
-          <description>Ubuntu 14.04</description>
+          <ami>ami-1c45e273</ami>
+          <description>Ubuntu 16.04 LTS</description>
           <zone></zone>
           <securityGroups>jenkins-slave</securityGroups>
           <remoteFS>/home/ubuntu/jenkins</remoteFS>
