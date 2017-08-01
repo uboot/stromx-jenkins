@@ -47,6 +47,7 @@ pipeline-build-step:latest:not-pinned
 pipeline-graph-analysis:latest:not-pinned
 pipeline-input-step:latest:not-pinned
 pipeline-milestone-step:latest:not-pinned
+pipeline-model-definition:latest:not-pinned
 pipeline-rest-api:latest:not-pinned
 pipeline-stage-step:latest:not-pinned
 pipeline-stage-view:latest:not-pinned
