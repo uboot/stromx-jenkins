@@ -7,7 +7,7 @@
   <numExecutors>0</numExecutors>
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
-  <authorizationStrategy class="hudson.security.AuthorizationStrategy$Unsecured">
+  <authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy">
     <denyAnonymousReadAccess>false</denyAnonymousReadAccess>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
@@ -26,10 +26,9 @@
     <hudson.plugins.ec2.EC2Cloud plugin="ec2@1.36">
       <name>ec2-Amazon</name>
       <useInstanceProfileForCredentials>false</useInstanceProfileForCredentials>
-      <credentialsId></credentialsId>
+      <credentialsId>47cc31a8-3467-4591-b9ce-535249d3df2b</credentialsId>
       <privateKey>
-        <privateKey>
-        </privateKey>
+        <privateKey>{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}</privateKey>
       </privateKey>
       <instanceCap>1</instanceCap>
       <templates>
@@ -78,13 +77,13 @@ sudo apt-get install -y default-jre git cmake libboost-all-dev doxygen python-de
   <views>
     <hudson.model.AllView>
       <owner class="hudson" reference="../../.."/>
-      <name>All</name>
+      <name>all</name>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
     </hudson.model.AllView>
   </views>
-  <primaryView>All</primaryView>
+  <primaryView>all</primaryView>
   <slaveAgentPort>50000</slaveAgentPort>
   <label></label>
   <nodeProperties/>
