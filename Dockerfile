@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.72
+FROM jenkins/jenkins:lts
 
 COPY active.txt .
 RUN plugins.sh active.txt
